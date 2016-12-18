@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center"
+          hgap="10"
+          prefHeight="326.0"
+          prefWidth="438.0"
+          style="-fx-background-color: #00ff0f;"
+          vgap="10"
+          xmlns:fx="http://javafx.com/fxml/1"
+          xmlns="http://javafx.com/javafx/8"
+          fx:controller="sample.controller.SampleController"
+>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label text="FORM 1" />
+      <Button mnemonicParsing="false" text="NEXT" GridPane.rowIndex="1" onMouseClicked="#next1"/>
+   </children>
+</GridPane>

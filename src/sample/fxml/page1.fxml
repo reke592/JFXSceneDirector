@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Button?>
+<AnchorPane
+        fx:controller="sample.controller.SampleRegController"
+        maxHeight="-Infinity"
+        maxWidth="-Infinity"
+        minHeight="-Infinity"
+        minWidth="-Infinity"
+        prefHeight="519.0"
+        prefWidth="324.0"
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+>
+   <children>
+      <Pane layoutX="15.0"
+            layoutY="12.0"
+            prefHeight="495.0"
+            prefWidth="294.0"
+            AnchorPane.bottomAnchor="12.0"
+            AnchorPane.leftAnchor="15.0"
+            AnchorPane.rightAnchor="15.0"
+            AnchorPane.topAnchor="12.0"
+      >
+         <children>
+            <TextField fx:id="tfLastName"
+                       layoutX="16.0"
+                       layoutY="48.0"
+                       maxWidth="269.0"
+                       minWidth="226.0"
+                       prefHeight="36.0"
+                       prefWidth="262.0"
+                       promptText="Surname"
+            >
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tfFirstName"
+                          layoutX="16.0"
+                          layoutY="137.0"
+                          maxWidth="262.0"
+                          minWidth="226.0"
+                          prefHeight="36.0"
+                          prefWidth="262.0"
+                          promptText="Firstname"
+            >
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tfMiddleName"
+                          layoutX="17.0"
+                          layoutY="229.0"
+                          maxWidth="262.0"
+                          minWidth="226.0"
+                          prefHeight="36.0"
+                          prefWidth="262.0"
+                          promptText="Middle Name"
+            >
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <DatePicker fx:id="dpBirthDate"
+                        layoutX="17.0"
+                        layoutY="323.0"
+                        prefHeight="31.0"
+                        prefWidth="262.0"
+                        promptText="Birthday ( ex: 1/10/1991 )"
+            />
+            <Button fx:id="btnNext"
+                    onMouseClicked="#showNext"
+
+                    layoutX="204.0"
+                    layoutY="438.0"
+                    prefHeight="36.0"
+                    prefWidth="74.0"
+                    style="-fx-background-color: #ff5000;"
+                    text="Next"
+                    textFill="WHITE"
+            />
+            <Button onMouseClicked="#cancel"
+                       layoutX="14.0"
+                       layoutY="438.0"
+                       prefHeight="36.0"
+                       prefWidth="74.0"
+                       style="-fx-background-color: #ffffff;"
+                       text="Cancel"
+            />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

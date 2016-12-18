@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="jfxscenedirector">
+    <output-path>$PROJECT_DIR$/out/artifacts/jfxscenedirector</output-path>
+    <root id="archive" name="jfxscenedirector.jar">
+      <element id="module-output" name="JFXSceneDirector" />
+    </root>
+  </artifact>
+</component>
