@@ -46,6 +46,10 @@ public class Main extends Application {
         new SceneController().init(primaryStage);
     }
 
+    @Override
+    public void stop() throws Exception {
+        SceneController.close();
+    }
 
     public static void main(String[] args) {
         launch(args);
