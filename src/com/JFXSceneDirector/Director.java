@@ -3,7 +3,8 @@ package com.JFXSceneDirector;
 import com.JFXSceneDirector.util.BindingGroup;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.util.HashMap;
+
+import java.util.Hashtable;
 import java.util.Map;
 
 /**
@@ -11,17 +12,18 @@ import java.util.Map;
  * */
 public abstract class Director  {
 
-    private static Map<String, Model> _scenes = new HashMap<>();
-    private static Map<String, BindingGroup> _binding_groups = new HashMap<>();
-    private static Stage _stage;
-    private static SceneContext _context;
-    private static String _start_scene;
-    private static Class _controller;
+    private static Map<String, ISceneModel> _scenes = null;
+    private static Map<String, BindingGroup> _binding_groups = null;
+    private static Stage _stage = null;
+    private static SceneContext _context = null;
+    private static String _start_scene = null;
 
 
     // fetch the controller class for classloader on class instantiation
     public Director() {
-        _controller = this.getClass();
+        _scenes = new Hashtable<>();
+        _binding_groups = new Hashtable<>();
+        SceneModel.setClassLoader(this.getClass().getClassLoader());
     }
 
 
@@ -49,11 +51,13 @@ public abstract class Director  {
 
         _binding_groups.clear();
         _scenes.clear();
-        _binding_groups = null;
+
         _scenes = null;
+        _binding_groups = null;
         _stage = null;
         _context = null;
         _start_scene = null;
+        SceneModel.setClassLoader(null);
     }
 
 
@@ -80,8 +84,8 @@ public abstract class Director  {
     /**
      * Register new scene
      * */
-    protected void add(String key, String fxml_url, String win_title) {
-        _scenes.put(key, new SceneModel(_controller.getClassLoader().getResource(fxml_url), win_title));
+    protected void add(String key, String fxml_source, String win_title) {
+        _scenes.put(key, new SceneModel(fxml_source, win_title));
     }
 
 
@@ -121,7 +125,7 @@ public abstract class Director  {
      * @param context the value you want to pass into next scene
      * */
     public static void show(String key, Stage stage, SceneContext context) {
-        Model model = _scenes.get(key);
+        ISceneModel model = _scenes.get(key);
 
         /*
          set the context first, because when the stage.show() is called,

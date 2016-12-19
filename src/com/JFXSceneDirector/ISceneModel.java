@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 /**
  * Interface for scene model
  * */
-public interface Model {
+public interface ISceneModel {
     Parent load();
     String getWinTitle();
 }
