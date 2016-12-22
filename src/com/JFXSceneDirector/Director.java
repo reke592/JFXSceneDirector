@@ -1,7 +1,6 @@
 package com.JFXSceneDirector;
 
 import com.JFXSceneDirector.util.BindingGroup;
-import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -175,14 +174,8 @@ public abstract class Director  {
      * */
     public static void createBindingGroup(BindingGroup group){
         // remove previous bindings
-        if(_binding_groups.containsKey(group.getName())) {
-            Platform.runLater(new Runnable() {
-                @Override
-                public void run() {
-                    removeBindingGroup(group.getName());
-                }
-            });
-        }
+        if(_binding_groups.containsKey(group.getName()))
+            removeBindingGroup(group.getName());
 
         _binding_groups.put(group.getName(), group);
     }
@@ -192,8 +185,8 @@ public abstract class Director  {
      * @param group_name String
      * */
     public static void removeBindingGroup(String group_name) {
+        System.out.println("Unbinding : " + group_name);
         _binding_groups.get(group_name).unbindAll();
-        _binding_groups.remove(group_name);
     }
 
 }
