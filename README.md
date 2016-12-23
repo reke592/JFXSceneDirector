@@ -1,7 +1,9 @@
 # JFXSceneDirector (beta)
 A small library to transform a java class into scene controller.
 
-JAR file: <a href="https://github.com/reke592/JFXSceneDirector/releases/download/v0.1b/jfxscenedirector.jar"> jfxscenedirector.jar (beta)</a>
+JAR file: <a href="https://github.com/reke592/JFXSceneDirector/releases/download/v0.1b/jfxscenedirector.jar"> jfxscenedirector.jar (beta)</a><br>
+see: <a href="http://reke.16mb.com/article/read/39">documentation</a>
+
 
 # Usage
 Create a java file that will serve as your scene controller.
